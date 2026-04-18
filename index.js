@@ -4,6 +4,7 @@ const express = require('express');
 const authRoutes = require('./src/routes/auth.routes');
 const departmentRoutes = require('./src/routes/department.routes');
 const employeeRoutes = require('./src/routes/employee.routes');
+const attendanceRoutes = require('./src/routes/attendance.routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/departments', departmentRoutes);
 app.use('/api/departments', employeeRoutes);
+app.use('/api/employees', attendanceRoutes);
 
 
 pool.connect()
